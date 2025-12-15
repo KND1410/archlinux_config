@@ -4,7 +4,7 @@ set -e
 
 echo "[*] Installing fastfetch..."
 
-# التحقق من مدير الحزم
+# Check the package manager
 if command -v pacman >/dev/null 2>&1; then
     sudo pacman -S --noconfirm fastfetch
 elif command -v apt >/dev/null 2>&1; then
@@ -17,7 +17,7 @@ else
     exit 1
 fi
 
-echo "[*] Creating ~/.config/fastfetch directory (if not exists)..."
+echo "[*] Creating ~/.config/fastfetch directory (if it does not exist)..."
 mkdir -p "$HOME/.config/fastfetch"
 
 echo "[*] Copying config.jsonc..."

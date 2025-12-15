@@ -2,7 +2,7 @@
 
 echo "🔵 Cleaning Brave temporary files..."
 
-# IndexedDB (أغلب الألعاب تحفظ بياناتها هنا)
+# IndexedDB (most browser games store their data here)
 rm -rf ~/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/*
 
 # Local Storage
@@ -11,24 +11,26 @@ rm -rf ~/.config/BraveSoftware/Brave-Browser/Default/Local\ Storage/*
 # Service Worker CacheStorage
 rm -rf ~/.config/BraveSoftware/Brave-Browser/Default/Service\ Worker/CacheStorage/*
 
-# GPU/WebGL/WebGPU caches
+# GPU / WebGL / WebGPU caches
 rm -rf ~/.config/BraveSoftware/Brave-Browser/Default/GPUCache/*
 rm -rf ~/.config/BraveSoftware/Brave-Browser/Default/ShaderCache/*
 
-# Unity WebGL / BlobStorage (الألعاب الثقيلة)
+# Unity WebGL / BlobStorage (heavy games)
 rm -rf ~/.config/BraveSoftware/Brave-Browser/Default/BlobStorage/*
 
-# AppImage cache (إذا كنت تستعمل AppImages بشكل عام)
+# AppImage cache (if you use AppImages in general)
 rm -rf ~/.cache/appimagekit
 rm -rf ~/.cache/thumbnails/*
 
-# System cache (آمن)
+# System cache (safe)
 sudo rm -rf /var/cache/*
 
 # Thumbnails cleanup
 rm -rf ~/.cache/thumbnails/*
 
 echo "✅ Cleaning complete!"
+
+
 #!/bin/bash
 
 echo "🔵 Cleaning Firefox cache..."
@@ -50,16 +52,22 @@ rm -rf "$PROFILE_DIR"/startupCache/*
 
 # GPU / WebGL cache
 rm -rf "$PROFILE_DIR"/shader-cache/*
+
+# OBS Studio cache and browser data
 rm -rf ~/.cache/obs-studio/*
 rm -rf ~/.config/obs-studio/plugin_config/*
 rm -rf ~/.config/obs-studio/plugin_data/obs-browser/cache/*
 rm -rf ~/.config/obs-studio/plugin_data/obs-browser/Code\ Cache/*
 rm -rf ~/.config/obs-studio/logs/*
+
+# Pacman temporary files
 sudo rm -rf /var/tmp/pacman*
 sudo pacman -Scc
 sudo pacman -Sc
-sudo journalctl --vacuum-size=500M   # يبقي حتى 500 ميغابايت
-sudo journalctl --vacuum-time=7d     # يبقي فقط سجلات آخر 7 أيام
+
+# System journal cleanup
+sudo journalctl --vacuum-size=500M   # Keep up to 500 MB
+sudo journalctl --vacuum-time=7d     # Keep only the last 7 days
 sudo rm -rf /var/cache/*
 rm -rf ~/.cache/*
 sudo journalctl --vacuum-size=100M
@@ -67,19 +75,20 @@ sudo journalctl --vacuum-size=100M
 # Service Worker cache
 rm -rf "$PROFILE_DIR"/storage/default/*/cache/*
 
-# IndexedDB (يخزن ملفات ألعاب المتصفح الثقيلة)
+# IndexedDB (stores heavy browser game files)
 rm -rf "$PROFILE_DIR"/storage/default/*/idb/*
 
-# Local storage temporary data (لا تمس التاريخ)
+# Local storage temporary data (does not touch history)
 rm -rf "$PROFILE_DIR"/storage/default/*/ls/*
 
 # Thumbnails
 rm -rf ~/.cache/mozilla/firefox/*
 
 echo "✅ Firefox cache cleaned successfully!"
+
+# VS Code cache
 rm -rf ~/.config/Code/Cache/*
 rm -rf ~/.config/Code/CachedData/*
 rm -rf ~/.config/Code/GPUCache/*
 rm -rf ~/.config/Code/User/workspaceStorage/*
 rm -rf ~/.config/Code/crashpad/*
-
