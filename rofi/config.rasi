@@ -1,0 +1,24 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    kb-cancel: "Escape";
+}
+
+@theme "/usr/share/rofi/themes/material.rasi"
+/*
+Adapta-Nokto.rasi          fullscreen-preview.rasi  lb.rasi
+android_notification.rasi  glue_pro_blue.rasi       material.rasi
+Arc-Dark.rasi              gruvbox-common.rasinc    Monokai.rasi
+Arc.rasi                   gruvbox-dark-hard.rasi   paper-float.rasi
+arthur.rasi                gruvbox-dark.rasi        Paper.rasi
+blue.rasi                  gruvbox-dark-soft.rasi   purple.rasi
+c64.rasi                   gruvbox-light-hard.rasi  sidebar.rasi
+DarkBlue.rasi              gruvbox-light.rasi       sidebar-v2.rasi
+dmenu.rasi                 gruvbox-light-soft.rasi  solarized_alternate.rasi
+docu.rasi                  iggy.jpg                 solarized.rasi
+fancy2.rasi                iggy.rasi
+fancy.rasi                 Indego.rasi
+# Best: docu,fancy, fullscreen-preview, sidebar-v2, material
+*/
