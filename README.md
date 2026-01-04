@@ -1,5 +1,5 @@
 # Archlinux
-This is my config's file < br / >
-Just ignore this stupid repository. < br / >
-Thanks < br / >
+This is my config's file  
+Just ignore this stupid repository.  
+Thanks <br>
 Have a good day! <3
